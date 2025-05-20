@@ -1,0 +1,35 @@
+services:
+  app:
+    build: .
+    container_name: notihelp-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+      - rabbitmq
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/notihelp
+      - RABBITMQ_URL=amqp://rabbitmq:5672
+    volumes:
+      - .:/app
+
+  mongo:
+    image: mongo:4.4
+    container_name: notihelp-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: notihelp-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+
+volumes:
+  mongo-data:

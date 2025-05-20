@@ -1,0 +1,20 @@
+{
+  "name": "notihelp",
+  "version": "1.0.0",
+  "description": "Sistema de clasificación y veracidad de noticias",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-api": "node index.js",
+    "start-worker-text": "node workers/textWorker.js",
+    "start-worker-image": "node workers/imageWorker.js"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "axios": "^1.9.0",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.1",
+    "sharp": "^0.33.0",
+    "uuid": "^9.0.0"
+  }
+}
