@@ -1,0 +1,30 @@
+# Node.js
+node_modules/
+npm-debug.log
+.env
+*.log
+
+# Docker volumes o bases de datos locales
+/data/
+*.pid
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Visual Studio Code
+.vscode/
+
+# Archivos temporales
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Archivos de build
+dist/
+build/
+coverage/
+
+# Archivos zip
+*.zip
